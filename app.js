@@ -113,7 +113,9 @@ function loadMessages() {
     for (let id in messages) {
       const msg = messages[id];
       const div = document.createElement("div");
-      div.innerHTML = `<strong>${msg.sender === currentUser.uid ? "Moi" : "Lui"}:</strong> ${msg.content}`;
+      div.classList.add("message");
+      div.classList.add(msg.sender === currentUser.uid ? "mine" : "theirs");
+      div.textContent = msg.content;
       chatBox.appendChild(div);
     }
     chatBox.scrollTop = chatBox.scrollHeight;
