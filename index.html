@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamSmic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>TeamSmic</h1>
+
+        <div id="auth-section">
+            <button onclick="loginWithGoogle()">Se connecter avec Google</button>
+            <p id="auth-message"></p>
+        </div>
+
+        <div id="chat-section" style="display:none;">
+            <h2>Chats privés</h2>
+            <select id="user-list" onchange="selectUser()">
+                <option value="">-- Choisir un utilisateur --</option>
+            </select>
+
+            <div id="chat-box" style="border:1px solid #ddd; height:300px; overflow-y:auto; margin:10px 0; padding:5px;"></div>
+
+            <textarea id="message-content" placeholder="Écris un message..."></textarea>
+            <button onclick="sendMessage()">Envoyer</button>
+            <button onclick="logout()">Se déconnecter</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
